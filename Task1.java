@@ -46,9 +46,11 @@ class guessingnumber{
                         System.out.println("Your guess is too low");
                         System.out.println("You have " + attempt_left + " attempt left");
                     } else {
+                        System.out.println("You have " + attempt_left + " attempt left");
                         System.out.println("Invalid input");
                     }
                 } else {
+                    System.out.println("You have " + attempt_left + " attempt left");
                     System.out.println("Invalid input");
                 }
 
