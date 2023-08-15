@@ -32,20 +32,45 @@ class Currency_Converter{
 
         String from , To;
         double amount;
+        int fromnumber , Tonumber;
         System.out.println("Welcome to Currency Converter");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of currency you want to convert from");
-        System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
-        from = currency.get(sc.nextInt());
-        //System.out.println(from);
-        System.out.println("Enter the number of currency you want to convert to");
-        System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
-        To = currency.get(sc.nextInt());
-        //System.out.println(To);
-        System.out.println("Enter the amount you want to convert");
-        amount = sc.nextDouble();
-        double result =convert(from,To,amount);
-        System.out.println("The amount of "+amount+" "+from+" converted "+result+" "+To);
+        do {
+            System.out.println("Enter the number of currency you want to convert from");
+            System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
+            fromnumber = sc.nextInt();
+            if (fromnumber < 1 || fromnumber > 6) {
+                System.out.println("Invalid Input");
+                System.out.println("Enter Correct Option");
+                System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
+                fromnumber = sc.nextInt();
+            }
+            from = currency.get(fromnumber);
+            //System.out.println(from);
+            System.out.println("Enter the number of currency you want to convert to");
+            System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
+            Tonumber = sc.nextInt();
+            if (Tonumber < 1 || Tonumber > 6) {
+
+                System.out.println("Invalid Input");
+                System.out.println("Enter Correct Option");
+                System.out.println("1: USD(US Dollar)\n2: EUR(Euro)\n3: HKD(Hong Kong Dollar)\n4: INR(Indian Rupees)\n5: CAD(Canadian Dollar)\n6: PKR(Pakistani Rupees)");
+                Tonumber = sc.nextInt();
+            }
+            To = currency.get(Tonumber);
+            //System.out.println(To);
+            System.out.println("Enter the amount you want to convert");
+            amount = sc.nextDouble();
+            double result = convert(from, To, amount);
+            System.out.println("The amount of " + amount + " " + from + " converted " + result + " " + To);
+            System.out.println("Do you want to convert again");
+            System.out.println("1: Yes\n2: No");
+            int choice = sc.nextInt();
+            if (choice == 2) {
+                break;
+            }
+        }while (true);
+        System.out.println("Thank You for using our Currency Converter");
     }
 
     private double convert(String from , String to , double amount) throws IOException {
