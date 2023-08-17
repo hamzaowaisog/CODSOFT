@@ -92,18 +92,27 @@ public class stdMenu implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == b1){
+            new AddStudent();
+            jf.setVisible(false);
 
         }
         else if (e.getSource() == b2){
-
+            new DisplayStudent();
+            jf.setVisible(false);
         }
         else if(e.getSource() == b3){
+            new SearchStudent();
+            jf.setVisible(false);
 
         }
         else if (e.getSource() == b4){
+            new EditStudent();
+            jf.setVisible(false);
 
         }
         else if (e.getSource() == b5){
+            new DeleteStudent();
+            jf.setVisible(false);
 
         }
         else if (e.getSource() == b7){
