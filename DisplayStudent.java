@@ -7,9 +7,9 @@ import java.sql.*;
 
 public class DisplayStudent extends JFrame implements ActionListener {
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        DisplayStudent displayStudent = new DisplayStudent();
-    }
+//    public static void main(String[] args) throws ClassNotFoundException {
+//        DisplayStudent displayStudent = new DisplayStudent();
+//    }
     JFrame jf;
     Font f,f1;
     JButton b1,b2;
