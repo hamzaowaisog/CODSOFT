@@ -10,9 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class AdmLogin extends JFrame implements ActionListener {
-    public static void main(String[] args) {
-        AdmLogin admLogin = new AdmLogin();
-    }
+//    public static void main(String[] args) {
+//        AdmLogin admLogin = new AdmLogin();
+//    }
     JFrame jf;
     Font f,f1;
     JButton b1,b2,b3;
