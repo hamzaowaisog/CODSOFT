@@ -10,9 +10,9 @@ public class stdMenu implements ActionListener {
     JLabel l1,l2;
     ImageIcon img1;
 
-    public static void main(String[] args) {
-        stdMenu stdMenu = new stdMenu();
-    }
+//    public static void main(String[] args) {
+//        stdMenu stdMenu = new stdMenu();
+//    }
 
 
     public stdMenu() {
