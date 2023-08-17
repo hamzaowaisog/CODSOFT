@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -128,6 +129,44 @@ public class AdmLogin extends JFrame implements ActionListener {
             try {
                 if(txt.getText().equals("") || id1.getText().equals("") || pwd.getText().equals("")){
                     JOptionPane.showMessageDialog(this,"Please Enter the Empty Field");
+                }
+                else{
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","root");
+                    System.out.println("Connected to Database");
+                    id = Integer.parseInt(id1.getText());
+                    name = txt.getText();
+                    pass = pwd.getText();
+                    ps = con.prepareStatement("select * from admintbl where id=? and name=? and password=?");
+                    ps.setInt(1,id);
+                    ps.setString(2,name);
+                    ps.setString(3,pass);
+                    rs = ps.executeQuery();
+                    while (rs.next()){
+                        checkid = rs.getInt("id");
+                        checkname = rs.getString("name");
+                        checkpass = rs.getString("password");
+                        isActive = rs.getBoolean("active");
+                    }
+                    if (id == checkid && name.equals(checkname) && pass.equals(checkpass)) {
+                        if (isActive) {
+                            JOptionPane.showMessageDialog(this, "Login Successful");
+                            new stdMenu();
+                            jf.setVisible(false);
+                        }
+                        else{
+
+                            JOptionPane.showMessageDialog(this,"Your Account is Deactivated");
+                            new StdManagement();
+                            jf.setVisible(false);
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this,"Invalid ID, Name or Password");
+                        txt.setText("");
+                        pwd.setText("");
+                        id1.setText("");
+                    }
                 }
             }
             catch (Exception ex){
