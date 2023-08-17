@@ -10,9 +10,9 @@ public class stdMenu extends JFrame implements ActionListener {
     JLabel l1,l2;
     ImageIcon img1;
 
-//    public static void main(String[] args) {
-//        stdMenu stdMenu = new stdMenu();
-//    }
+    public static void main(String[] args) {
+        stdMenu stdMenu = new stdMenu();
+    }
 
 
     public stdMenu() {
@@ -97,7 +97,11 @@ public class stdMenu extends JFrame implements ActionListener {
 
         }
         else if (e.getSource() == b2){
-            new DisplayStudent();
+            try {
+                new DisplayStudent();
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
             jf.setVisible(false);
         }
         else if(e.getSource() == b3){
