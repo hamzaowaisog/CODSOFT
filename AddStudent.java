@@ -74,6 +74,7 @@ public class AddStudent extends JFrame implements ActionListener {
         b3 = new JButton("Add",new ImageIcon("add1.png"));
         b3.setFont(f);
         b3.setBounds(200,750,150,50);
+        jf.getRootPane().setDefaultButton(b3);
         b3.addActionListener(this);
         jf.add(b3);
 
