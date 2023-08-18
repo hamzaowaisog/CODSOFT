@@ -16,7 +16,7 @@ public class SearchStudent extends JFrame implements ActionListener {
     JButton b1,b2,b3;
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     ImageIcon img1;
-    JTextField roll_no;//name
+    JTextField roll_no;//roll no
     String name,f_name,mobile,gender;
     Integer grade;
     Connection con;
