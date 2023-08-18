@@ -141,7 +141,7 @@ public class AddStudent extends JFrame implements ActionListener {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE) || mobile.getText().length()>=13){
+                if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE) || mobile.getText().length()>=12){
                     e.consume();
                 }
             }
