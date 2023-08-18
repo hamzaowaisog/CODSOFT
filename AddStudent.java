@@ -16,9 +16,9 @@ import java.sql.*;
 import java.util.Properties;
 
 public class AddStudent extends JFrame implements ActionListener {
-    public static void main(String[] args) {
-        AddStudent addStudent = new AddStudent();
-    }
+//    public static void main(String[] args) {
+//        AddStudent addStudent = new AddStudent();
+//    }
     JFrame jf;
     Font f,f1;
     JButton b1,b2,b3;
