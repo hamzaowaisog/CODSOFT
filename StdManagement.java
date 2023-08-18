@@ -50,6 +50,7 @@ public class StdManagement extends JFrame implements ActionListener {
         b= new JButton("OK",new ImageIcon("ok.png"));
         b.setFont(f);
         b.setBounds(250,700,150,50);
+        jf.getRootPane().setDefaultButton(b);
         b.addActionListener(this);
         jf.add(b);
 

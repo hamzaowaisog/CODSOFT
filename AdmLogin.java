@@ -97,6 +97,7 @@ public class AdmLogin extends JFrame implements ActionListener {
         b1 = new JButton("Enter",new ImageIcon("ok.png"));
         b1.setFont(f);
         b1.setBounds(150,750,175,50);
+        jf.getRootPane().setDefaultButton(b1);
         b1.addActionListener(this);
         jf.add(b1);
 
