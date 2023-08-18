@@ -181,6 +181,7 @@ public class SearchStudent extends JFrame implements ActionListener {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","root");
+                    System.out.println("Connected to Database");
                     ps = con.prepareStatement("SELECT * FROM stdtable WHERE roll_no=?");
                     ps.setInt(1,Integer.parseInt(roll_no.getText()));
                     rs = ps.executeQuery();
