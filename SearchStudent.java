@@ -13,7 +13,7 @@ public class SearchStudent extends JFrame implements ActionListener {
 
     JFrame jf;
     Font f,f1;
-    JButton b1,b2,b3;
+    JButton b1,b2,b3,b4;
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     ImageIcon img1;
     JTextField roll_no;//roll no
@@ -65,21 +65,28 @@ public class SearchStudent extends JFrame implements ActionListener {
 
         b1 = new JButton("Search",new ImageIcon("search1.png"));
         b1.setFont(f);
-        b1.setBounds(200,770,150,50);
+        b1.setBounds(175,770,150,50);
+        jf.getRootPane().setDefaultButton(b1);
         b1.addActionListener(this);
         jf.add(b1);
 
         b2 = new JButton("Clear",new ImageIcon("clear.png"));
         b2.setFont(f);
-        b2.setBounds(450,770,150,50);
+        b2.setBounds(350,770,150,50);
         b2.addActionListener(this);
         jf.add(b2);
 
-        b3 = new JButton("Cancel",new ImageIcon("cancel.png"));
+        b3 = new JButton("Exit",new ImageIcon("cancel.png"));
         b3.setFont(f);
         b3.setBounds(700,770,150,50);
         b3.addActionListener(this);
         jf.add(b3);
+
+        b4 = new JButton("Back", new ImageIcon("back.png"));
+        b4.setFont(f);
+        b4.setBounds(525, 770, 150, 50);
+        b4.addActionListener(this);
+        jf.add(b4);
 
         l4 = new JLabel("Name :");
         l4.setFont(f1);
@@ -215,6 +222,10 @@ public class SearchStudent extends JFrame implements ActionListener {
             l15.setText("");
         }
         else if(e.getSource() == b3){
+            System.exit(0);
+            jf.setVisible(false);
+        }
+        else if (e.getSource() == b4){
             new stdMenu();
             jf.setVisible(false);
         }
