@@ -40,7 +40,6 @@ public class AddStudent extends JFrame implements ActionListener {
     String name_check,f_name_check,number;
     String gender;
     int roll_no,getRoll_no,grade_check;
-
     public AddStudent(){
         jf = new JFrame();
         f = new Font("Times New Roman",Font.BOLD,20);//button
