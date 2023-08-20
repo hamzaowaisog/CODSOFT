@@ -66,16 +66,10 @@ public class DeleteStudent extends JFrame implements ActionListener {
 
         b1 = new JButton("Delete", new ImageIcon("delete.png"));
         b1.setFont(f);
-        b1.setBounds(175, 770, 150, 50);
+        b1.setBounds(200, 770, 150, 50);
         jf.getRootPane().setDefaultButton(b1);
         b1.addActionListener(this);
         jf.add(b1);
-
-        b2 = new JButton("Clear", new ImageIcon("clear.png"));
-        b2.setFont(f);
-        b2.setBounds(350, 770, 150, 50);
-        b2.addActionListener(this);
-        jf.add(b2);
 
         b3 = new JButton("Exit", new ImageIcon("cancel.png"));
         b3.setFont(f);
@@ -85,7 +79,7 @@ public class DeleteStudent extends JFrame implements ActionListener {
 
         b4 = new JButton("Back", new ImageIcon("back.png"));
         b4.setFont(f);
-        b4.setBounds(525, 770, 150, 50);
+        b4.setBounds(450, 770, 150, 50);
         b4.addActionListener(this);
         jf.add(b4);
 
@@ -221,14 +215,6 @@ public class DeleteStudent extends JFrame implements ActionListener {
                 }
             }
 
-        } else if (e.getSource() == b2) {
-            roll_no.setText("");
-            l5.setText("");
-            l7.setText("");
-            l9.setText("");
-            l11.setText("");
-            l13.setText("");
-            l15.setText("");
         } else if (e.getSource() == b3) {
             System.exit(0);
             jf.setVisible(false);
