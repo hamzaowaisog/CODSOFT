@@ -11,9 +11,9 @@ import java.awt.event.KeyEvent;
 import java.sql.*;
 
 public class EditStudent extends JFrame implements ActionListener {
-    public static void main(String[] args) {
-        EditStudent editStudent = new EditStudent();
-    }
+//    public static void main(String[] args) {
+//        EditStudent editStudent = new EditStudent();
+//    }
     JFrame jf;
     Font f,f1;
     JButton b1,b2,b3,b4;
@@ -275,6 +275,8 @@ public class EditStudent extends JFrame implements ActionListener {
             }
             else {
                 try {
+                    b2.setEnabled(false);
+                    jf.getRootPane().setDefaultButton(b1);
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","root");
                     System.out.println("Connected to DataBase");
